@@ -1,0 +1,48 @@
+1. Инсталирав, и си направив мој профил;
+2. Името на главната гранка го променив од main во master;
+3. Креирав нов приватен репозиториум и го именував SI_2024_lab1_213101;
+4. Креирав директориум со име SI_2024_lab1_213101, а потоа во фолдерот отворив Git Bash и внесив git init;
+5. Внесив git remote add origin https://github.com/viktorrrnikolovski1/SI_2024_lab1_213101.git
+6. Со nano README.md креирав фајл, внесив „Viktor Nikolovski 213101“, па ги извршив командите git add README.md, и git commit -m "Initial commit"
+7. Ги спуштив, направив git add . , потоа git commint -m "Add starter code" 
+8. git push origin master
+9. Со git branch bug1 и git branch bug2 креирав две гранки кои се разгрануваат од master
+10. git checkout bug1.
+11. Откако ја поправив грешката во кодот од == во != за непарни броеви направив git commit -am "Fix wrong condition in filterOddLengthStrings"
+12. git checkout bug2
+13. Откако ја поправив грешката во кодот од < во >= направив git commit -am "Fix wrong condition in makeBigStringFrom"
+14. git checkout bug1
+15. Ја направив потребната промена и извршив git commit -am "Call method filterOddLengthStrings in main class"
+16. git checkout bug2
+17. Ја направив потребната промена и извршив git commit -am "Call method makeBigStringFrom in main class"
+18. git push --all од гранката master
+19. git checkout master
+20. git merge bug1
+При овој merge не се појавени конфликти и спојувањето е извршено Fast-forward
+21. git push --all
+22. git checkout bug2
+23. git rebase master
+
+$ git rebase master
+Auto-merging SILab1Main.java
+CONFLICT (content): Merge conflict in SILab1Main.java
+error: could not apply b72bc92... Call method makeBigStringFrom in main class
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply b72bc92... Call method makeBigStringFrom in main class
+
+
+Во SILab1Main.java го оставив само makeBigStringFrom методот
+Ги извршив git add SILab1Main.java и git rebase --continue
+
+24. git checkout master
+25. git merge bug2
+Fast-forward без конфликти бидејќи конфликтот беше разрешен во чекор 23
+26. git push --all
+27. git push --force --all
+28. git log
+29. git add .
+git commit -m "Final commit"
+git push
